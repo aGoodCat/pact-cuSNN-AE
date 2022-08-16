@@ -1,5 +1,4 @@
 # AE High-performance Architecture Aware Sparse ConvolutionalNeural Networks for GPUs
-# cuSNN Prepare
 ## Package requirements:
 * cmake(>=3.10)
 * CUDA-10.2(V100)
