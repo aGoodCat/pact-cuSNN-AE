@@ -15,6 +15,13 @@
 # Build code & Run experiments on V100 machine
   cd v100
   python3 run_v100.py(build and run)
+  ##experiment 1
+  it will report total energy consumption characteristics of different networks(densenet169,densenet201,resnet50,resnet152) on the V100
+machine for both cuDNN and cuSNN. The unit is millijouel.
+  ##experiment 2
+  In experiment 2, we present the full network evaluation of different networks for both cuDNN and cuSNN. The unit is milli-sec.
+  ##experiment 3
+  In experiment 3, we we demonstrate the effectiveness of our approach by comparing the run-time of individual layers(densenet201&resnet152).
   
 ## Entire network evaluation for densenet(121, 169, 201), resnet(101, 152)
 For the entire network evaluation, we include the time for all non-convolution and convolution layers. We use cuSNN kernels for sparse layers. The rest of the layers (dense convolution, batchnorm, relu, etc.) are built using cuDNN. Our entire network inference code takes a binary file representing the input images as input and outputs inference time and energy cost (mj )for the entire network.
