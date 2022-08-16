@@ -526,7 +526,7 @@ int main(int argc,char *argv[]){
         t2[i] = 0.0f;
     }
     float total = 0.0f;
-    for(int i=0;i<1024;++i){
+    for(int i=0;i<100;++i){
         load_input(imagePath + to_string(i) + ".bin", 3 * 224 * 224, input);
         cudaMemcpy(dInput,input,224*224*3*sizeof(float),cudaMemcpyHostToDevice);
         cudaEventRecord(event_start);
@@ -649,7 +649,7 @@ int main(int argc,char *argv[]){
     std::ofstream file_out;
     file_out.open ("densenet201_layers.txt", std::ofstream::out);
     for(int i=0;i<99;++i){
-        string out = to_string(i+1) + "," + to_string(t1[i]/1024);
+        string out = to_string(i+1) + "," + to_string(t1[i]/100);
         file_out << out<<endl;
     }
     file_out.close();

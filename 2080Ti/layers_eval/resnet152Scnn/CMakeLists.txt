@@ -9,10 +9,8 @@ if (OPENMP_FOUND)
     set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
 endif()
 include_directories(${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES})
-#include_directories(/usr/local/cuda/include)
-#link_directories(/usr/local/cuda/lib64)
-include_directories(/home/yufan/cuda/include)
-link_directories(/home/yufan/cuda/lib64)
+include_directories($ENV{cuda_path})
+link_directories($ENV{cuda_lib_path})
 
 add_executable(test inc/common.h inc/scnn.h inc/cudnnOps.h inc/scnnOps.h inc/convBlk.h src/common.cpp src/relu.cu src/Relu.cu
         src/conv_1_64_56_56_64.cu src/conv_1_128_28_28_128.cu src/conv_1_256_14_14_256.cu

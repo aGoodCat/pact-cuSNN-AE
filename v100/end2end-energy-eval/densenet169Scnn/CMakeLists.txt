@@ -10,8 +10,8 @@ if (OPENMP_FOUND)
 endif()
 include_directories(${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES})
 include_directories(/usr/local/cuda/include)
-include_directories(/home/sukumaranrajam.1/cuda/include)
-link_directories(/home/sukumaranrajam.1/cuda/lib64)
+include_directories($ENV{cuda_path})
+link_directories($ENV{cuda_lib_path})
 add_executable(test inc/common.h inc/scnn.h inc/cudnnOps.h inc/scnnOps.h inc/convBlk.h src/common.cpp src/Relu.cu
         src/relu.cu src/FC.cu src/Concate.cu src/Add.cu src/Conv.cu
         src/BatchNorm.cu src/Pool.cu
