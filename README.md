@@ -1,4 +1,4 @@
-# pact-cuSNN-AE
+# AE High-performance Architecture Aware Sparse ConvolutionalNeural Networks for GPUs
 # cuSNN Prepare
 ## Package requirements:
 * cmake(>=3.10)
