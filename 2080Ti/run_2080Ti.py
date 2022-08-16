@@ -180,6 +180,9 @@ subprocess.run(["./test","../../../../sample_images/"])
 print('starting evaluate resnet152 time consumption(cuSNN) , unit is milli-sec(ms)...')
 os.chdir(model_resnet152_cusnn)
 subprocess.run(["./test","../../../../sample_images/"])
+
+#please uncomment below to test VGG
+'''
 print('starting evaluate vgg16 time consumption(cuDNN) , unit is milli-sec(ms)...')
 os.chdir(model_vgg16)
 subprocess.run(["./test","../../../../sample_images/"])
@@ -187,11 +190,12 @@ print('starting evaluate vgg16 time consumption(cuSNN) , unit is milli-sec(ms)..
 os.chdir(model_vgg16_cusnn)
 subprocess.run(["./test","../../../../sample_images/"])
 print('starting evaluate vgg19 time consumption(cuDNN) , unit is milli-sec(ms)....')
-os.chdir(model_vgg16)
+os.chdir(model_vgg19)
 subprocess.run(["./test","../../../../sample_images/"])
 print('starting evaluate vgg19 time consumption(cuSNN) , unit is milli-sec(ms)...')
-os.chdir(model_vgg16_cusnn)
+os.chdir(model_vgg19_cusnn)
 subprocess.run(["./test","../../../../sample_images/"])
+'''
 time.sleep(2)
 print('starting evaluate layerwise speedup for densenet201 and resnet152...')
 os.chdir(cudnn_exec_pre_path)

@@ -259,6 +259,8 @@ subprocess.run(["./test","../../../../sample_images/"])
 print('starting evaluate resnet152 energy consumption(cuSNN), unit is milli-joule(mj)...')
 os.chdir(energy_resnet152_cusnn)
 subprocess.run(["./test","../../../../sample_images/"])
+#uncomment below to test energy comparision for VGG
+'''
 print('starting evaluate vgg16 energy consumption(cuDNN), unit is milli-joule(mj)...')
 os.chdir(energy_vgg16)
 subprocess.run(["./test","../../../../sample_images/"])
@@ -271,7 +273,7 @@ subprocess.run(["./test","../../../../sample_images/"])
 print('starting evaluate vgg19 energy consumption(cuSNN), unit is milli-joule(mj)...')
 os.chdir(energy_vgg19_cusnn)
 subprocess.run(["./test","../../../../sample_images/"])
-
+'''
 time.sleep(2)
 
 print('starting compare end to end performance cuDNN VS cuSNN...')
@@ -299,6 +301,9 @@ subprocess.run(["./test","../../../../sample_images/"])
 print('starting evaluate resnet152 time consumption(cuSNN) , unit is milli-sec(ms)...')
 os.chdir(model_resnet152_cusnn)
 subprocess.run(["./test","../../../../sample_images/"])
+
+#uncomment below to test performance comparision of VGG
+'''
 print('starting evaluate vgg16 time consumption(cuDNN) , unit is milli-sec(ms)...')
 os.chdir(model_vgg16)
 subprocess.run(["./test","../../../../sample_images/"])
@@ -306,11 +311,12 @@ print('starting evaluate vgg16 time consumption(cuSNN) , unit is milli-sec(ms)..
 os.chdir(model_vgg16_cusnn)
 subprocess.run(["./test","../../../../sample_images/"])
 print('starting evaluate vgg19 time consumption(cuDNN) , unit is milli-sec(ms)....')
-os.chdir(model_vgg16)
+os.chdir(model_vgg19)
 subprocess.run(["./test","../../../../sample_images/"])
 print('starting evaluate vgg19 time consumption(cuSNN) , unit is milli-sec(ms)...')
-os.chdir(model_vgg16_cusnn)
+os.chdir(model_vgg19_cusnn)
 subprocess.run(["./test","../../../../sample_images/"])
+'''
 time.sleep(2)
 print('starting evaluate layerwise speedup for densenet201 and resnet152...')
 os.chdir(cudnn_exec_pre_path)
